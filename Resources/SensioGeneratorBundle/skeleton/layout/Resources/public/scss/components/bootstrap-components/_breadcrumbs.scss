@@ -5,12 +5,19 @@
 .breadcrumb {
     margin: 0;
     padding: 0;
+
+    background-color: transparent;
+
     > li + li {
         @extend .icon-chevron-right;
         &:before {
             font-size: .8em;
             color: $green;
         }
+    }
+
+    > .active {
+        color: $gray-dark;
     }
 }
 
