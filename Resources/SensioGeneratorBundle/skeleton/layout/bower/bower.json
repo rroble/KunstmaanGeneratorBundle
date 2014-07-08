@@ -2,7 +2,7 @@
   "name": "{{ bundle.getName() }}",
   "version": "1.0.0",
   "dependencies": {
-    "bootstrap-sass-official": "~3.1",
+    "bootstrap-sass-official": "~3.2",
     "bourbon": "~4.0",
     "jquery": "~1.11",
     "cupcake": "~1.7",
