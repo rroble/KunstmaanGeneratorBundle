@@ -32,6 +32,7 @@ class LayoutGenerator extends KunstmaanGenerator
 
         $this->generateGulpFiles();
         $this->generateBowerFiles();
+        $this->generateBundlerFiles();
         $this->generateAssets();
         $this->generateTemplate();
     }
@@ -43,17 +44,26 @@ class LayoutGenerator extends KunstmaanGenerator
     {
         $this->renderFiles($this->skeletonDir.'/gulp/', $this->rootDir, array('bundle' => $this->bundle), true);
 
-        $this->assistant->writeLine('Generating Gulp configuration : <info>OK</info>');
+        $this->assistant->writeLine('Generating Gulp configuration files : <info>OK</info>');
     }
 
     /**
-     * Generate the bower configuration files.
+     * Generate the Bower configuration files.
      */
     private function generateBowerFiles()
     {
         $this->renderFiles($this->skeletonDir.'/bower/', $this->rootDir, array('bundle' => $this->bundle), true);
         $this->renderSingleFile($this->skeletonDir.'/bower/', $this->rootDir, '.bowerrc', array('bundle' => $this->bundle), true);
-        $this->assistant->writeLine('Generating bower configuration : <info>OK</info>');
+        $this->assistant->writeLine('Generating Bower configuration files : <info>OK</info>');
+    }
+
+    /**
+     * Generate the Bundler configuration files.
+     */
+    private function generateBundlerFiles()
+    {
+        $this->renderFiles($this->skeletonDir.'/bundler/', $this->rootDir, array('bundle' => $this->bundle), true);
+        $this->assistant->writeLine('Generating Bundler configuration files : <info>OK</info>');
     }
 
     /**
