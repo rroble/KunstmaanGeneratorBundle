@@ -1,26 +1,56 @@
 /* ==========================================================================
-   Config
-
-   This file is exclusively intended for setting up imports
-   Never add styles directly to this file
+   Headings
    ========================================================================== */
 
-/* General
+/*doc
+---
+title: Headings
+name: 01_headings
+category: Typography
+---
+```html_example
+    <h1>H1. Neque porro quisquam est qui.</h1>
+    <h2>H2. Neque porro quisquam est qui.</h2>
+    <h3>H3. Neque porro quisquam est qui.</h3>
+    <h4>H4. Neque porro quisquam est qui.</h4>
+    <h5>H5. Neque porro quisquam est qui.</h5>
+    <h6>H6. Neque porro quisquam est qui.</h6>
+```
+*/
+
+
+/* Shared
    ========================================================================== */
-@import "general/paths",
-        "general/colors",
-        "general/fonts";
+h1, h2, h3, h4, h5, h6 {
+    margin: .5rem 0;
+
+    font-weight: normal;
+    line-height: $line-height--headers;
+}
 
 
-/* Components
+/* Specific
    ========================================================================== */
-// @import "components/...";
+h1 {
+    font-size: $font-size-h1;
+}
 
+h2 {
+    font-size: $font-size-h2;
+}
 
-/* Vendors
-   ========================================================================== */
-@import "vendors/bourbon/bourbon",
-        "vendors/bootstrap/bootstrap-vars",
-        "vendors/bootstrap/bootstrap-imports",
-        "vendors/cargobay/cargobay-vars",
-        "vendors/cargobay/cargobay-imports";
+h3 {
+    font-size: $font-size-h3;
+}
+
+h4 {
+    font-size: $font-size-h4;
+}
+
+h5 {
+    font-size: $font-size-h5;
+}
+
+h6 {
+    font-size: $font-size-h6;
+}
