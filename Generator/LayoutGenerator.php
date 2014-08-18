@@ -33,7 +33,7 @@ class LayoutGenerator extends KunstmaanGenerator
         $this->generateGulpFiles();
         $this->generateBowerFiles();
         $this->generateBundlerFiles();
-        $this->generateAssets();
+        $this->generateUIAssets();
         $this->generateTemplate();
     }
 
@@ -67,20 +67,20 @@ class LayoutGenerator extends KunstmaanGenerator
     }
 
     /**
-     * Generate the public asset files.
+     * Generate the UI asset files.
      */
-    private function generateAssets()
+    private function generateUIAssets()
     {
         $sourceDir = $this->skeletonDir;
         $targetDir = $this->bundle->getPath();
 
-        $relPath = '/Resources/public/';
+        $relPath = '/Resources/ui/';
         $this->copyFiles($sourceDir.$relPath, $targetDir.$relPath, true);
 
-        $relPath = '/Resources/public/scss/config/';
+        $relPath = '/Resources/ui/scss/config/';
         $this->renderSingleFile($sourceDir.$relPath, $targetDir.$relPath, '_paths.scss', array('bundle' => $this->bundle), true);
 
-        $this->assistant->writeLine('Generating public assets : <info>OK</info>');
+        $this->assistant->writeLine('Generating UI assets : <info>OK</info>');
     }
 
     /**

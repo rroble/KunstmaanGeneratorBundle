@@ -1,0 +1,207 @@
+/* ==========================================================================
+   Styleguide Theme Kunstmaan
+   ========================================================================== */
+
+/* Header
+   ========================================================================== */
+.styleguide__header {
+    height: 2rem;
+
+    background: #0bd789;
+    color: #fff;
+}
+
+.styleguide__header__head {
+    margin: 0;
+
+    font-family: arial, sans-serif;
+    font-size: .6rem;
+    line-height: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+
+/* Header -- Headroom
+   ========================================================================== */
+@media (min-width: 800px) {
+    .headroom {
+        z-index: 4;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        -webkit-transition: -webkit-transform .2s linear;
+           -moz-transition: -moz-transform .2s linear;
+                transition: transform .2s linear;
+    }
+
+    .headroom--pinned {
+        -webkit-transform: translateY(0%);
+           -moz-transform: translateY(0%);
+                transform: translateY(0%);
+
+    }
+
+    .headroom--unpinned {
+        -webkit-transform: translateY(calc(-100% + 2rem));
+           -moz-transform: translateY(calc(-100% + 2rem));
+                transform: translateY(calc(-100% + 2rem));
+    }
+}
+
+
+
+/* Categories Navigation
+   ========================================================================== */
+.styleguide__categorie-navigation {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+@media (min-width: 800px) {
+    .styleguide__categorie-navigation {
+        height: 2.5rem;
+    }
+}
+
+.styleguide__categorie-navigation__item {
+    display: inline-block;
+    height: 2.5rem;
+    padding: 0 1em;
+
+    font-size: .8rem;
+    line-height: 2.5rem;
+    color: #000;
+    text-decoration: none;
+}
+
+.styleguide__categorie-navigation__item:first-child {
+    padding-left: 0;
+}
+
+.styleguide__categorie-navigation__item--active {
+    color: #0bd789;
+}
+
+
+
+/* Blocks Navigation
+   ========================================================================== */
+.styleguide__block-navigation {
+    background: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+}
+
+@media (min-width: 800px) {
+    .styleguide__block-navigation {
+        height: 2rem;
+    }
+}
+
+.styleguide__block-navigation__item {
+    display: inline-block;
+    height: 2rem;
+    padding: 0 1em;
+
+    font-size: .6rem;
+    line-height: 2rem;
+    color: #000;
+    text-decoration: none;
+}
+
+.styleguide__block-navigation__item:first-child {
+    padding-left: 0;
+}
+
+.styleguide__block-navigation__item--top {
+    float: right;
+    color: #000;
+}
+
+@media (max-width: 800px) {
+    .styleguide__block-navigation__item--top {
+        display: none;
+    }
+}
+
+.styleguide__block-navigation__item--top:hover {
+    color: #0bd789;
+    text-decoration: none;
+}
+
+
+
+/* Blocks Header
+   ========================================================================== */
+.styleguide__content-container > h1 {
+    position: relative;
+    padding-top: 6.5rem;
+
+    color: #8759a1;
+}
+
+.styleguide__content-container > h1:before {
+    content: '';
+    position: absolute;
+    top: 6.9rem;
+    left: -1rem;
+    display: block;
+    width: .5rem;
+    height: .8em;
+
+    background: #8759a1;
+    opacity: .2;
+}
+
+.styleguide__content-container > h1:first-child {
+    padding-top: 3.5rem;
+}
+
+.styleguide__content-container > h1:first-child:before {
+    top: 3.9rem;
+}
+
+
+/* Color template
+   ========================================================================== */
+.styleguide__color-template {
+    display: inline-block;
+    margin: 0 1.5rem 1.5rem 0;
+
+    text-align: center;
+}
+
+.styleguide__color-template__example {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1rem;
+
+    border-radius: 50%;
+}
+
+
+
+/* Code blocks
+   ========================================================================== */
+.codeBlock {
+    margin: 2rem 0;
+    white-space: nowrap;
+
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    font-size: .6rem;
+}
+
+.styleguide__code {
+    padding: .1em .2em;
+    white-space: nowrap;
+
+    color: #000;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    font-size: .6rem;
+}

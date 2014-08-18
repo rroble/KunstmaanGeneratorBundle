@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Config
+
+   This file is exclusively intended for setting up imports
+   Never add styles directly to this file
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+@import "general/paths",
+        "general/colors",
+        "general/fonts";
+
+
+/* Components
+   ========================================================================== */
+// @import "components/...";
+
+
+/* Vendors
+   ========================================================================== */
+@import "vendors/bourbon/bourbon",
+        "vendors/bootstrap/bootstrap-vars",
+        "vendors/bootstrap/bootstrap-imports",
+        "vendors/cargobay/cargobay-vars",
+        "vendors/cargobay/cargobay-imports";

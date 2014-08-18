@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Colors
+
+   This file is exclusively intended for setting up variables
+   Never add styles directly to this file
+   ========================================================================== */
+
+/*doc
+    ---
+    title: Colors
+    name: 01_colors
+    category: Base
+    ---
+
+    <div class='styleguide__color-template'><i class='styleguide__color-template__example' style='background: #000;'></i><code class='styleguide__code'>#000 - $black</code></code></div>
+    <div class='styleguide__color-template'><i class='styleguide__color-template__example' style='background: #fff;'></i><code class='styleguide__code'>#fff - $white</code></div>
+*/
+
+
+/* Default
+   ========================================================================== */
+$black:             #000;
+$white:             #fff;
