@@ -17,7 +17,6 @@
         {
             test: Modernizr.input.placeholder,
             nope: '/frontend/js/jquery.placeholder.js',
-                {% endjavascripts %}
             callback : function (url, result, key) {
                 $('input, textarea').placeholder();
             }
