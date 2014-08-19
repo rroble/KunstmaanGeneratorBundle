@@ -49,7 +49,7 @@ var {{ bundle.getName() }} = {
             bowerComponentsPath + '/svgeezy/svgeezy.min.js',
             bowerComponentsPath + '/jquery-placeholder/jquery.placeholder.js',
         ]
-    }
+    },
 
     liveReloadFiles: [
         distPath + '/css/style.css',
