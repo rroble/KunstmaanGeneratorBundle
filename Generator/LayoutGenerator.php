@@ -43,7 +43,7 @@ class LayoutGenerator extends KunstmaanGenerator
     private function generateGulpFiles()
     {
         $this->renderFiles($this->skeletonDir.'/gulp/', $this->rootDir, array('bundle' => $this->bundle), true);
-
+        $this->renderSingleFile($this->skeletonDir.'/gulp/', $this->rootDir, '.jshintrc', array('bundle' => $this->bundle), true);
         $this->assistant->writeLine('Generating Gulp configuration files : <info>OK</info>');
     }
 
