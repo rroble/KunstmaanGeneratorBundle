@@ -23,7 +23,6 @@ var {{ bundle.getName() }} = {
     styleguide: resourcesPath + '/ui/styleguide',
 
     img: resourcesPath + '/ui/img/**/*.{png,jpg,jpeg,gif,svg,webp}',
-    fonts: resourcesPath + '/ui/fonts/*/*.{eot,woff,ttf,svg}',
     twig: resourcesPath + '/views/**/*.html.twig',
     scss: resourcesPath + '/ui/scss/**/*.scss',
     js: {
@@ -43,6 +42,14 @@ var {{ bundle.getName() }} = {
             resourcesPath + '/ui/js/**/*.js',
         ]
     },
+
+    copy: {
+        fonts: resourcesPath + '/ui/fonts/*/*.{eot,woff,ttf,svg}',
+        js: [
+            bowerComponentsPath + '/svgeezy/svgeezy.min.js',
+            bowerComponentsPath + '/jquery-placeholder/jquery.placeholder.js',
+        ]
+    }
 
     liveReloadFiles: [
         distPath + '/css/style.css',
@@ -157,16 +164,15 @@ gulp.task('images', function () {
 });
 
 
-// Fonts
-gulp.task('fonts', function () {
-    return gulp.src({{ bundle.getName() }}.fonts)
-        // Set desitination
-        .pipe(gulp.dest({{ bundle.getName() }}.dist.fonts))
+// Copy
+gulp.task('copy', function () {
+    // Js (vendors)
+    return gulp.src({{ bundle.getName() }}.copy.js)
+        .pipe(gulp.dest({{ bundle.getName() }}.dist.js))
 
-        // Show total size of files
-        .pipe(plugins.size({
-            title: 'files'
-        }));
+    // Fonts
+    return gulp.src({{ bundle.getName() }}.copy.fonts)
+        .pipe(gulp.dest({{ bundle.getName() }}.dist.fonts))
 });
 
 
@@ -199,7 +205,7 @@ gulp.task('watch', function () {
 
 
 // Build
-gulp.task('build', ['styles', 'scripts', 'images', 'fonts'], function() {
+gulp.task('build', ['styles', 'scripts', 'images', 'copy'], function() {
     gulp.start('styleguide');
 });
 
