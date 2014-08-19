@@ -1,14 +1,27 @@
 'use strict';
 
+/* ==========================================================================
+   Gulpfile
+
+   Development-tasks:
+   - gulp (build + watch)
+   - gulp build
+   - gulp watch
+   ========================================================================== */
+
+
+/* Setup Gulp
+   ========================================================================== */
 // Require Gulp
 var gulp = require('gulp');
-
 
 // Load Gulp plugins
 var plugins = require('gulp-load-plugins')();
 
 
-// Config
+
+/* Config
+   ========================================================================== */
 var resourcesPath = './src/{{ bundle.namespace|replace({'\\':'/'}) }}/Resources';
 var distPath = './web/frontend';
 var bowerComponentsPath = './bower_components';
@@ -58,6 +71,9 @@ var {{ bundle.getName() }} = {
 };
 
 
+
+/* Tasks
+   ========================================================================== */
 // Styles
 gulp.task('styles', function() {
     return gulp.src({{ bundle.getName() }}.scss)
@@ -165,12 +181,14 @@ gulp.task('images', function () {
 
 
 // Copy
-gulp.task('copy', function () {
-    // Js (vendors)
+gulp.task('copy', ['copyJs', 'copyFonts']);
+
+gulp.task('copyJs', function () {
     return gulp.src({{ bundle.getName() }}.copy.js)
         .pipe(gulp.dest({{ bundle.getName() }}.dist.js))
+});
 
-    // Fonts
+gulp.task('copyFonts', function () {
     return gulp.src({{ bundle.getName() }}.copy.fonts)
         .pipe(gulp.dest({{ bundle.getName() }}.dist.fonts))
 });
