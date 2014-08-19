@@ -58,7 +58,7 @@
 
     {# Main Footer #}
     {% block mainfooter %}
-        {% include 'KunsthuisWebsiteBundle:Layout:footer.html.twig' %}
+        {% include '<%= bundle.getName() %>:Layout:footer.html.twig' %}
     {% endblock %}
 
     {# Js #}
