@@ -57,7 +57,7 @@ var {{ bundle.getName() }} = {
     },
 
     copy: {
-        fonts: resourcesPath + '/ui/fonts/*/*.{eot,woff,ttf,svg}',
+        fonts: resourcesPath + '/ui/fonts/**/*.{eot,woff,ttf,svg}',
         js: [
             bowerComponentsPath + '/svgeezy/svgeezy.min.js',
             bowerComponentsPath + '/jquery-placeholder/jquery.placeholder.js',
